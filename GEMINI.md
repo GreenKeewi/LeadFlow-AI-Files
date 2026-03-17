@@ -34,7 +34,8 @@ This directory contains the strategic foundation, research, and initial delivera
 ---
 
 ## Development Conventions
--   **Proposal Design:** Follow the "Light + Emerald" theme (#059669) with Playfair Display headings and DM Sans body text.
+- **Source Control:** Commit and push changes after every modification to any of the files in the repository.
+- **Proposal Design:** Follow the "Light + Emerald" theme (#059669) with Playfair Display headings and DM Sans body text.
 -   **Communication Tone:** Use the second person ("your network", "your leads") when drafting content for the platform owner. Frame features as business outcomes.
 -   **Diagrams:** Use inline SVGs for all technical and flow diagrams within the proposal and platform documentation.
 

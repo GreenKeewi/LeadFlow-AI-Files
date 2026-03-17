@@ -45,6 +45,10 @@ Headings: Playfair Display · Body: DM Sans
 - No technical jargon — audience is a business operator, not a developer
 - Option A vs Option B models must be explained by *how they work*, never by price
 
+## Git Workflow
+
+**After every change to any file, commit and push immediately.** Do not batch changes across multiple files before committing — each save should be followed by a commit and push.
+
 ## Platform Architecture (Planned — Not Yet Built)
 
 When building the Next.js platform after proposal approval:
