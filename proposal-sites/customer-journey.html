@@ -631,6 +631,63 @@
       font-size: .62rem; color: var(--g500); font-weight: 700;
       text-transform: uppercase; letter-spacing: .05em;
     }
+    /* ─── Narrator strip ─── */
+    #narrator {
+      position: absolute;
+      bottom: 112px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 95;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    #narrator-inner {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(5,150,105,0.18);
+      border-radius: 24px;
+      padding: 8px 18px 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      min-width: 280px;
+      max-width: 560px;
+    }
+    /* Dark bg scenes need an inverted narrator */
+    #scene-3.active ~ * #narrator-inner,
+    .narrator-dark #narrator-inner {
+      background: rgba(6,95,70,0.72);
+      border-color: rgba(110,231,183,0.25);
+      color: white;
+    }
+    .narrator-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--em-p);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; flex-shrink: 0;
+      color: var(--em-dd);
+    }
+    #narrator-text {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--g700);
+      letter-spacing: .01em;
+      line-height: 1.4;
+      min-height: 1.1em;
+    }
+    .narrator-cursor {
+      display: inline-block;
+      width: 2px; height: .85em;
+      background: var(--em-d);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blink .75s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
   </style>
 </head>
 <body>
@@ -1008,13 +1065,76 @@
     </div>
 
   </div><!-- /scenes -->
+
+  <!-- Narrator -->
+  <div id="narrator">
+    <div id="narrator-inner">
+      <div class="narrator-icon" id="narrator-icon">💡</div>
+      <div id="narrator-text"><span class="narrator-cursor"></span></div>
+    </div>
+  </div>
+
 </div><!-- /app -->
 
 <script>
   // ─── Config ───
   const TOTAL  = 7;
-  const DUR_MS = 4500;
+  const DUR_MS = 7000;
   let cur = 0, timer = null;
+
+  // ─── Narrator texts ───
+  const NARRATE = [
+    { icon: '📱', text: 'A homeowner spots a targeted ad while scrolling. One tap — their journey begins.' },
+    { icon: '🌐', text: 'They land on a clean, focused page. One clear action: request a free estimate.' },
+    { icon: '✏️',  text: 'Their details are captured in seconds. Name, service needed, preferred date — submitted.' },
+    { icon: '📡', text: 'LeadFlow instantly scores every provider by distance and availability, routing the lead to the best match.' },
+    { icon: '📋', text: 'The lead hits the provider\'s CRM the moment it\'s matched — name, service, and status all populated automatically.' },
+    { icon: '📅', text: 'The provider opens their calendar and locks in a time. The customer gets a confirmation instantly.' },
+    { icon: '🏠', text: 'From first click to confirmed appointment — fully automated, in under 90 seconds.' },
+  ];
+
+  let narrateTimer = null;
+
+  function typeNarrator(stageIdx) {
+    const { icon, text } = NARRATE[stageIdx];
+    const el   = document.getElementById('narrator-text');
+    const ico  = document.getElementById('narrator-icon');
+    const box  = document.getElementById('narrator-inner');
+
+    // Dark theme for routing stage
+    if(stageIdx === 3) {
+      box.style.background = 'rgba(6,95,70,0.75)';
+      box.style.borderColor = 'rgba(110,231,183,0.25)';
+      el.style.color = 'rgba(255,255,255,0.9)';
+      ico.style.background = 'rgba(110,231,183,0.2)';
+      ico.style.color = '#6EE7B7';
+    } else {
+      box.style.background = '';
+      box.style.borderColor = '';
+      el.style.color = '';
+      ico.style.background = '';
+      ico.style.color = '';
+    }
+
+    ico.textContent = icon;
+    el.innerHTML = '<span class="narrator-cursor"></span>';
+
+    clearTimeout(narrateTimer);
+    let i = 0;
+    function tick() {
+      if(i < text.length) {
+        el.innerHTML = text.slice(0, ++i) + '<span class="narrator-cursor"></span>';
+        narrateTimer = setTimeout(tick, 28 + Math.random() * 18);
+      } else {
+        // Remove cursor after done
+        narrateTimer = setTimeout(() => {
+          el.innerHTML = text;
+        }, 1800);
+      }
+    }
+    // Small delay before starting, so scene entrance animates first
+    narrateTimer = setTimeout(tick, 600);
+  }
 
   // ─── Particles ───
   (function(){
@@ -1044,6 +1164,7 @@
     document.getElementById('scene-'+cur).classList.add('active');
     updateUI();
     startProgress();
+    typeNarrator(cur);
     runAnim(cur);
     clearTimeout(timer);
     if(cur < TOTAL-1) timer = setTimeout(()=>go(cur+1), DUR_MS);
@@ -1227,6 +1348,7 @@
   // ─── Init ───
   updateUI();
   startProgress();
+  typeNarrator(0);
   anim0();
   timer = setTimeout(()=>go(1), DUR_MS);
 </script>
