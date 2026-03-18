@@ -57,23 +57,49 @@
 
     /* ─── Header ─── */
     #header {
-      position: absolute; top: 10px; left: 0; right: 0;
+      position: absolute; top: 0; left: 0; right: 0; height: 52px;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 24px; z-index: 90;
+      background: rgba(249,250,251,0.88);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     #logo {
       font-family: 'Instrument Serif', serif;
       font-size: 1.05rem; color: var(--em-dd);
-      display: flex; align-items: center; gap: 7px;
+      display: flex; align-items: center; gap: 7px; flex-shrink: 0;
     }
     #logo .dot-green {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--em-d); display: inline-block;
     }
+    #header-stage {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 8px; white-space: nowrap;
+    }
+    #header-stage-num {
+      font-size: .63rem; font-weight: 700; color: var(--em-d);
+      text-transform: uppercase; letter-spacing: .1em;
+      background: var(--em-p); padding: 2px 8px; border-radius: 10px;
+    }
+    #header-stage-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.1rem; color: var(--g900); letter-spacing: -.02em;
+    }
     #step-label {
       font-size: 0.72rem; color: var(--g500);
       font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      flex-shrink: 0;
     }
+    #header.dark-scene {
+      background: rgba(4,40,28,0.85);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    #header.dark-scene #logo        { color: var(--em-m); }
+    #header.dark-scene .dot-green   { background: var(--em-m); }
+    #header.dark-scene #header-stage-num   { background: rgba(110,231,183,.2); color: var(--em-m); }
+    #header.dark-scene #header-stage-title { color: white; }
+    #header.dark-scene #step-label  { color: rgba(255,255,255,.5); }
 
     /* ─── Dots ─── */
     #step-dots {
@@ -120,31 +146,13 @@
     .scene {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
-      padding-top: 140px; padding-bottom: 140px;
+      padding-top: 116px; padding-bottom: 116px;
       opacity: 0; pointer-events: none;
       transition: opacity .55s cubic-bezier(.16,1,.3,1);
     }
     .scene.active { opacity: 1; pointer-events: all; }
 
-    /* ─── Stage title (shared) ─── */
-    .stitle {
-      position: absolute; top: 46px; left: 50%; transform: translateX(-50%);
-      text-align: center; white-space: nowrap;
-    }
-    .stitle .snum {
-      font-size: .68rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--em-d); opacity: 0;
-    }
-    .stitle h2 {
-      font-family: 'Instrument Serif', serif; font-size: 1.9rem;
-      letter-spacing: -.025em; color: var(--g900); opacity: 0;
-    }
-    .stitle.dark .snum { color: var(--em-m); }
-    .stitle.dark h2   { color: white; }
-
-    /* Shared enter animation trigger */
-    .scene.active .stitle .snum { animation: fadeUp .45s ease .05s forwards; }
-    .scene.active .stitle h2    { animation: fadeUp .5s ease .2s forwards; }
+        /* .stitle removed — stage titles now live in #header-stage */
 
     /* ─── Keyframes ─── */
     @keyframes fadeUp {
@@ -635,7 +643,7 @@
     /* ─── Narrator strip ─── */
     #narrator {
       position: absolute;
-      top: 96px;
+      top: 62px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 95;
@@ -698,7 +706,11 @@
   <!-- Header -->
   <div id="header">
     <div id="logo"><span class="dot-green"></span>LeadFlow</div>
-    <div id="step-label">Step 1 of 7</div>
+    <div id="header-stage">
+      <span id="header-stage-num">Stage 1</span>
+      <span id="header-stage-title">The Ad Click</span>
+    </div>
+    <div id="step-label">1 / 7</div>
   </div>
 
   <!-- Dots -->
@@ -737,10 +749,6 @@
     <!-- ══════════════ SCENE 0: Ad Click ══════════════ -->
     <div class="scene active" id="scene-0">
       <div class="particles" id="p1"></div>
-      <div class="stitle">
-        <div class="snum">Stage 1</div>
-        <h2>The Ad Click</h2>
-      </div>
       <div class="ad-wrap">
         <div class="ad-frame">
           <div class="ad-fb-top">
@@ -780,10 +788,6 @@
 
     <!-- ══════════════ SCENE 1: Landing Page ══════════════ -->
     <div class="scene" id="scene-1">
-      <div class="stitle">
-        <div class="snum">Stage 2</div>
-        <h2>Landing Page</h2>
-      </div>
       <div class="browser-wrap">
         <div class="browser">
           <div class="b-chrome">
@@ -811,10 +815,6 @@
 
     <!-- ══════════════ SCENE 2: Lead Form ══════════════ -->
     <div class="scene" id="scene-2">
-      <div class="stitle">
-        <div class="snum">Stage 3</div>
-        <h2>Lead Captured</h2>
-      </div>
       <div class="form-wrap">
         <div class="form-card">
           <div class="form-eyebrow">Quick &amp; Easy</div>
@@ -848,10 +848,6 @@
 
     <!-- ══════════════ SCENE 3: Smart Routing ══════════════ -->
     <div class="scene" id="scene-3">
-      <div class="stitle dark">
-        <div class="snum">Stage 4</div>
-        <h2>Smart Routing</h2>
-      </div>
       <div class="routing-wrap">
         <svg id="routing-svg" viewBox="0 0 460 260" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -921,10 +917,6 @@
 
     <!-- ══════════════ SCENE 4: CRM ══════════════ -->
     <div class="scene" id="scene-4">
-      <div class="stitle">
-        <div class="snum">Stage 5</div>
-        <h2>CRM Updated</h2>
-      </div>
       <div class="crm-wrap">
         <div class="crm-card">
           <div class="crm-hd">
@@ -967,10 +959,6 @@
 
     <!-- ══════════════ SCENE 5: Calendar ══════════════ -->
     <div class="scene" id="scene-5">
-      <div class="stitle">
-        <div class="snum">Stage 6</div>
-        <h2>Appointment Booked</h2>
-      </div>
       <div class="cal-wrap">
         <div class="cal-card">
           <div class="cal-hd">
@@ -1029,10 +1017,6 @@
     <!-- ══════════════ SCENE 6: Estimate ══════════════ -->
     <div class="scene" id="scene-6">
       <div id="confetti-container"></div>
-      <div class="stitle">
-        <div class="snum">Stage 7</div>
-        <h2>Estimate Scheduled</h2>
-      </div>
       <div class="est-wrap">
         <div class="est-icons">
           <div class="e-ico">🔧</div>
@@ -1080,6 +1064,11 @@
   const TOTAL  = 7;
   const DUR_MS = 7000;
   let cur = 0, timer = null;
+
+  const STAGE_TITLES = [
+    'The Ad Click', 'Landing Page', 'Lead Captured',
+    'Smart Routing', 'CRM Updated', 'Appointment Booked', 'Estimate Scheduled'
+  ];
 
   // ─── Narrator texts ───
   const NARRATE = [
@@ -1173,7 +1162,10 @@
   function replay(){ clearTimeout(timer); go(0); }
 
   function updateUI(){
-    document.getElementById('step-label').textContent = `Step ${cur+1} of ${TOTAL}`;
+    document.getElementById('step-label').textContent = `${cur+1} / ${TOTAL}`;
+    document.getElementById('header-stage-num').textContent = `Stage ${cur+1}`;
+    document.getElementById('header-stage-title').textContent = STAGE_TITLES[cur];
+    document.getElementById('header').classList.toggle('dark-scene', cur === 3);
     document.querySelectorAll('.dot').forEach((d,i)=>{
       d.className = 'dot';
       if(i===cur) d.classList.add('active');
