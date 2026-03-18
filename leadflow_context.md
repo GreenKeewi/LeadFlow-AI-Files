@@ -89,8 +89,8 @@ Visual concept: Circular lifecycle — **Lead → Convert → Retain → Revive 
 
 | Item | Amount |
 |---|---|
-| Platform fee per SP | $250/month |
-| Per lead fee | $75–$100/lead |
+| Platform fee per SP | $75/month (Fully Managed) / $15/month (Platform + Strategy) |
+| Per lead fee | $20/converted lead |
 | Premium placement upsell | +$150/month per SP |
 | Ad management fee | 15–20% of ad spend |
 | Taha's hard costs (total platform) | ~$20–$29/month |
