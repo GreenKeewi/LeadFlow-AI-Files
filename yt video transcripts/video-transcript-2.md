@@ -1,3 +1,14 @@
+---
+title: "Transcript 2: if I wanted to scale an ai agency to $20k/mo in 2026, i’d do this…"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: if I wanted to scale an ai agency to $20k/mo in 2026, i’d do this…
 URL: https://www.youtube.com/watch?v=cCBCckshyMQ
 

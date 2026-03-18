@@ -1,3 +1,14 @@
+---
+title: "Transcript 1: how i get $4k/mo AI agency clients with paid ads (step by step)"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: how i get $4k/mo AI agency clients with paid ads (step by step)
 URL: https://www.youtube.com/watch?v=umpKrYXoWeA
 

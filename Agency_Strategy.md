@@ -1,3 +1,18 @@
+---
+title: AI Ad Agency Business Strategy (2026)
+tags:
+  - leadflow
+  - strategy
+  - agency
+---
+
+## Related
+- [[leadflow_context]] — Full platform context and business logic
+- [[Call Script]] — How this strategy is pitched in sales meetings
+- [[Video_Transcript_Analysis]] — Research that informed this strategy
+- [[beat-the-heat-meta-ad]] — Live example of the ad strategy in action
+- [[winter-furnace-failure-ad]] — Live example of the ad strategy in action
+
 # AI Ad Agency Business Strategy (2026)
 
 This document outlines the core pillars of building a high-ticket AI agency for local service-based businesses, focusing on creating predictable revenue through automated customer acquisition.

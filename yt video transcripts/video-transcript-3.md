@@ -1,3 +1,14 @@
+---
+title: "Transcript 3: i made $190,415 by selling Ai to businesses, here's how"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: i made $190,415 by selling Ai to businesses, here's how
 URL: https://www.youtube.com/watch?v=CA-KaF6K-rw&t=904s
 

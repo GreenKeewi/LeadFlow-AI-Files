@@ -1,4 +1,29 @@
+---
+title: HVAC Meeting Script
+tags:
+  - leadflow
+  - sales
+  - script
+aliases:
+  - Call Script
+  - HVAC Sales Script
+---
+
+## Related
+- [[leadflow_context]] — Full platform context to reference during the call
+- [[Agency_Strategy]] — Pricing models and strategy this script is based on
+- [[beat-the-heat-meta-ad]] — Ad example to show during the pitch
+- [[winter-furnace-failure-ad]] — Ad example to show during the pitch
+
 # HVAC Meeting Script
+
+### Links
+
+https://lead-flow-nee.netlify.app/ - Intro
+https://lead-flow-pricing.netlify.app/ - Pricing Models
+https://lead-flow-nee-process.netlify.app/ - Process Illustration
+
+---
 
 ### Ad Agency Pitch — Talking Points
 

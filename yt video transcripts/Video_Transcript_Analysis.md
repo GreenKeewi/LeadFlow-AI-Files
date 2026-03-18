@@ -1,3 +1,22 @@
+---
+title: Video Transcript & Deep Dive Analysis
+tags:
+  - leadflow
+  - research
+  - agency
+---
+
+## Related
+- [[leadflow_context]] — How this research shapes the LeadFlow platform
+- [[Agency_Strategy]] — Strategy document derived from this research
+- [[video-transcript-1]] — Raw transcript 1
+- [[video-transcript-2]] — Raw transcript 2
+- [[video-transcript-3]] — Raw transcript 3
+- [[video-transcript-4]] — Raw transcript 4
+- [[video-transcript-5]] — Raw transcript 5
+- [[video-transcript-6]] — Raw transcript 6
+- [[video-transcript-7]] — Raw transcript 7
+
 # Video Transcript & Deep Dive Analysis
 
 This document contains the full transcript of the "190K AI Services" video and a detailed breakdown of the subtle "little things" that contribute to the success of this agency model.

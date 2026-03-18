@@ -1,3 +1,14 @@
+---
+title: "Transcript 4: I helped him get his first AI agency client (here's how)"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: I helped him get his first AI agency client (here's how)
 URL: https://www.youtube.com/watch?v=Jodbs8Qqy24
 

@@ -1,3 +1,18 @@
+---
+title: LeadFlow — Winter Furnace Failure Ad
+tags:
+  - leadflow
+  - ads
+  - meta
+  - winter
+---
+
+## Related
+- [[leadflow_context]] — Platform context this ad drives traffic to
+- [[Agency_Strategy]] — Ad strategy framework
+- [[Call Script]] — Use this ad as a demo during sales pitches
+- [[beat-the-heat-meta-ad]] — Companion summer ad
+
 # LeadFlow — Winter Furnace Failure
 ## 15-Second Meta Feed Video Ad
 

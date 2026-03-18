@@ -1,3 +1,18 @@
+---
+title: Ad Script — Beat the Heat
+tags:
+  - leadflow
+  - ads
+  - meta
+  - summer
+---
+
+## Related
+- [[leadflow_context]] — Platform context this ad drives traffic to
+- [[Agency_Strategy]] — Ad strategy framework
+- [[Call Script]] — Use this ad as a demo during sales pitches
+- [[winter-furnace-failure-ad]] — Companion winter ad
+
 # Ad Script — "Beat the Heat"
 
 **Platform:** Meta Feed (Facebook / Instagram)

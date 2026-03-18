@@ -1,3 +1,14 @@
+---
+title: "Transcript 5: f*ck it... here's how to build a $30k/mo AI agency (private recording)"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: f*ck it... here's how to build a $30k/mo AI agency (private recording)
 URL: https://www.youtube.com/watch?v=YioMbTAO3r8
 

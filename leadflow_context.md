@@ -1,5 +1,21 @@
+---
+title: LeadFlow — Full Project Context
+tags:
+  - leadflow
+  - project/context
+aliases:
+  - LeadFlow Context
+---
+
 # LeadFlow — Full Project Context File
 > This file contains everything needed to continue this project in a new conversation. Read it fully before responding.
+
+## Related
+- [[Agency_Strategy]] — Business model, pricing, and agency blueprint
+- [[Call Script]] — HVAC sales meeting script
+- [[Video_Transcript_Analysis]] — Research analysis from 190K AI agency video
+- [[beat-the-heat-meta-ad]] — Summer Meta ad script
+- [[winter-furnace-failure-ad]] — Winter Meta ad script
 
 ---
 

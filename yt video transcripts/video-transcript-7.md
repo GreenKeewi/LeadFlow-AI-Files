@@ -1,3 +1,14 @@
+---
+title: "Transcript 7: this AI agency client pays me $3k/month (copy me)"
+tags:
+  - leadflow
+  - research
+  - transcript
+---
+
+## Related
+- [[Video_Transcript_Analysis]] — Analysis and insights drawn from these transcripts
+
 Title: this AI agency client pays me $3k/month (copy me)
 URL: https://www.youtube.com/watch?v=VyFyelc3ww0
 
