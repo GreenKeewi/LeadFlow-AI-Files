@@ -584,7 +584,7 @@
     /* ════════════════════════════════════
        STAGE 7 — Estimate
     ════════════════════════════════════ */
-    #scene-6 { background: linear-gradient(150deg,#ECFDF5 0%,#D1FAE5 45%,#A7F3D0 100%); }
+    #scene-5 { background: linear-gradient(150deg,#ECFDF5 0%,#D1FAE5 45%,#A7F3D0 100%); }
 
     #confetti-container { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
 
@@ -721,7 +721,6 @@
     <div class="dot" onclick="go(3)"></div>
     <div class="dot" onclick="go(4)"></div>
     <div class="dot" onclick="go(5)"></div>
-    <div class="dot" onclick="go(6)"></div>
   </div>
 
   <!-- Nav -->
@@ -957,65 +956,8 @@
       </div>
     </div>
 
-    <!-- ══════════════ SCENE 5: Calendar ══════════════ -->
+    <!-- ══════════════ SCENE 5: Estimate ══════════════ -->
     <div class="scene" id="scene-5">
-      <div class="cal-wrap">
-        <div class="cal-card">
-          <div class="cal-hd">
-            <div>
-              <div class="cal-month">March 2026</div>
-              <div class="cal-sp">Apex Comfort Co. — Schedule</div>
-            </div>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <rect width="26" height="26" rx="7" fill="rgba(255,255,255,.2)"/>
-              <rect x="6" y="8" width="14" height="11" rx="2" stroke="white" stroke-width="1.5"/>
-              <path d="M9 6v4M17 6v4M6 12h14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="cal-week">
-            <div class="cal-wn">Su</div><div class="cal-wn">Mo</div><div class="cal-wn">Tu</div>
-            <div class="cal-wn">We</div><div class="cal-wn">Th</div><div class="cal-wn">Fr</div><div class="cal-wn">Sa</div>
-          </div>
-          <div class="cal-grid">
-            <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
-            <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
-            <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
-            <div class="cal-cell">1</div>
-            <div class="cal-cell">2</div><div class="cal-cell avail">3</div>
-            <div class="cal-cell avail">4</div><div class="cal-cell">5</div>
-            <div class="cal-cell avail">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div>
-            <div class="cal-cell">9</div><div class="cal-cell avail">10</div>
-            <div class="cal-cell avail">11</div><div class="cal-cell">12</div>
-            <div class="cal-cell avail">13</div><div class="cal-cell avail">14</div><div class="cal-cell">15</div>
-            <div class="cal-cell">16</div><div class="cal-cell">17</div>
-            <div class="cal-cell today">18</div>
-            <div class="cal-cell" id="cal19">19</div>
-            <div class="cal-cell avail">20</div><div class="cal-cell avail">21</div>
-            <div class="cal-cell">22</div>
-          </div>
-          <div class="time-section">
-            <div class="time-lbl">Available — Thu, Mar 19</div>
-            <div class="time-grid">
-              <div class="t-slot">9:00 AM</div>
-              <div class="t-slot">11:00 AM</div>
-              <div class="t-slot sel" id="ts130">1:30 PM</div>
-              <div class="t-slot">3:00 PM</div>
-              <div class="t-slot">4:30 PM</div>
-            </div>
-          </div>
-          <div class="cal-confirm" id="calConfirm">
-            <div class="cal-conf-txt">
-              Booked: <strong>Thu Mar 19 — 1:30 PM</strong><br>
-              <span style="font-size:.7rem;color:#6b7280;">Jordan T. · Estimate</span>
-            </div>
-            <button class="cal-conf-btn">✓ Confirmed</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════════ SCENE 6: Estimate ══════════════ -->
-    <div class="scene" id="scene-6">
       <div id="confetti-container"></div>
       <div class="est-wrap">
         <div class="est-icons">
@@ -1061,13 +1003,13 @@
 
 <script>
   // ─── Config ───
-  const TOTAL  = 7;
+  const TOTAL  = 6;
   const DUR_MS = 7000;
   let cur = 0, timer = null;
 
   const STAGE_TITLES = [
     'The Ad Click', 'Landing Page', 'Lead Captured',
-    'Smart Routing', 'CRM Updated', 'Appointment Booked', 'Estimate Scheduled'
+    'Smart Routing', 'CRM Updated', 'Estimate Scheduled'
   ];
 
   // ─── Narrator texts ───
@@ -1077,7 +1019,6 @@
     { icon: '✏️',  text: 'Their details are captured in seconds. Name, service needed, preferred date — submitted.' },
     { icon: '📡', text: 'LeadFlow instantly scores every provider by distance and availability, routing the lead to the best match.' },
     { icon: '📋', text: 'The lead hits the provider\'s CRM the moment it\'s matched — name, service, and status all populated automatically.' },
-    { icon: '📅', text: 'The provider opens their calendar and locks in a time. The customer gets a confirmation instantly.' },
     { icon: '🏠', text: 'From first click to confirmed appointment — fully automated, in under 90 seconds.' },
   ];
 
@@ -1183,7 +1124,6 @@
       case 3: anim3(); break;
       case 4: anim4(); break;
       case 5: anim5(); break;
-      case 6: anim6(); break;
     }
   }
 
@@ -1287,23 +1227,8 @@
     });
   }
 
-  // Stage 5: Calendar
+  // Stage 5: Estimate + confetti
   function anim5(){
-    const c19    = document.getElementById('cal19');
-    const conf   = document.getElementById('calConfirm');
-    const ts     = document.getElementById('ts130');
-    c19.classList.remove('selected');
-    conf.classList.remove('show');
-    ts.classList.remove('sel');
-    setTimeout(()=>{
-      c19.classList.add('selected');
-      ts.classList.add('sel');
-      setTimeout(()=> conf.classList.add('show'), 650);
-    }, 800);
-  }
-
-  // Stage 6: Estimate + confetti
-  function anim6(){
     const badge = document.getElementById('estBadge');
     badge.classList.remove('show');
     setTimeout(()=> badge.classList.add('show'), 100);
