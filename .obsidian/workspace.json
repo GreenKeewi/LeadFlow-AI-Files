@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0be7bfba84dc0963",
+        "id": "dbeaddef4aadc273",
         "type": "tabs",
         "children": [
           {
-            "id": "f6d5d27e8d56f8da",
+            "id": "351bb26d94f0af1e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Agency_Strategy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Agency_Strategy"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 208.5
   },
   "right": {
     "id": "13a41de33e49483d",
@@ -176,6 +180,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "f6d5d27e8d56f8da",
-  "lastOpenFiles": []
+  "active": "351bb26d94f0af1e",
+  "lastOpenFiles": [
+    "Call Script.md",
+    "proposal-sites/pricing.html.tmp.12620.1773862258064",
+    "proposal-sites/pricing.html.tmp.12620.1773862254879",
+    "proposal-sites/pricing.html.tmp.12620.1773862251573",
+    "proposal-sites/pricing.html.tmp.12620.1773862247836",
+    "proposal-sites/pricing.html.tmp.12620.1773862244369",
+    "proposal-sites/pricing.html.tmp.12620.1773862235327",
+    "proposal-sites/pricing.html.tmp.12620.1773862231527",
+    "leadflow_context.md.tmp.12620.1773862226266",
+    "Agency_Strategy.md",
+    "leadflow_context.md"
+  ]
 }
