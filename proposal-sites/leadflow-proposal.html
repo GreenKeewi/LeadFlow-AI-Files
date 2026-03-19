@@ -243,6 +243,14 @@
         transform: translateY(-1px);
         color: white !important;
       }
+      nav.over-dark .nav-links .nav-cta {
+        background: white;
+        color: var(--ink) !important;
+      }
+      nav.over-dark .nav-links .nav-cta:hover {
+        background: #e5e7eb !important;
+        color: var(--ink) !important;
+      }
 
       /* ══════════════════════════════════════════
    HERO
@@ -5202,9 +5210,13 @@
         "scroll",
         () => {
           const scrolled = window.scrollY;
-          document
-            .getElementById("nav")
-            .classList.toggle("stuck", scrolled > 40);
+          const navEl = document.getElementById("nav");
+          navEl.classList.toggle("stuck", scrolled > 40);
+          const darkSection = document.getElementById("demo-ad");
+          if (darkSection) {
+            const r = darkSection.getBoundingClientRect();
+            navEl.classList.toggle("over-dark", r.top <= 64 && r.bottom > 64);
+          }
           const total =
             document.documentElement.scrollHeight - window.innerHeight;
           scrollBar.style.width = (scrolled / total) * 100 + "%";
