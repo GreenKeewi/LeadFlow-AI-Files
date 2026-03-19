@@ -4415,6 +4415,297 @@
       </div>
     </section>
 
+    <div class="divider"></div>
+
+    <!-- ═══ AD PREVIEW ═══ -->
+    <section id="ad-preview" style="background: var(--ink); position: relative; overflow: hidden;">
+      <!-- ambient glow -->
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 70% at 20% 50%,rgba(5,150,105,0.09) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 85% 20%,rgba(5,150,105,0.06) 0%,transparent 60%);z-index:0;"></div>
+      <div class="wrap" style="position:relative;z-index:1;">
+
+        <!-- header -->
+        <div class="reveal" style="max-width:640px;margin-bottom:72px;">
+          <span class="section-label" style="color:var(--g-light);">The Ads in Action</span>
+          <h2 class="heading" style="color:white;">See Exactly What We Run for Your <em>Network</em></h2>
+          <div class="emerald-rule"></div>
+          <p class="subhead" style="color:rgba(255,255,255,0.5);">
+            This is a sample Meta Feed ad — the type of creative we build to pull homeowners into your lead pipeline. AI-generated scenes, produced for your network.
+          </p>
+        </div>
+
+        <!-- two-column layout -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="ad-preview-layout">
+
+          <!-- left: phone mockup -->
+          <div class="reveal-left" style="display:flex;justify-content:center;">
+            <div style="position:relative;">
+              <!-- phone shell -->
+              <div style="
+                width:280px;
+                background:#0a0a0a;
+                border-radius:42px;
+                padding:14px;
+                box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.08),inset 0 0 0 1px rgba(255,255,255,0.04);
+                position:relative;
+              ">
+                <!-- notch -->
+                <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:88px;height:28px;background:#0a0a0a;border-radius:0 0 16px 16px;z-index:10;"></div>
+                <!-- screen bezel -->
+                <div style="border-radius:30px;overflow:hidden;background:#000;aspect-ratio:9/16;position:relative;">
+
+                  <!-- video container -->
+                  <div id="adVideoWrap" style="width:100%;height:100%;position:relative;background:#111;">
+                    <video id="adVideo" style="width:100%;height:100%;object-fit:cover;display:block;" muted playsinline>
+                      <source src="../ad-scripts/beat the heat ad/Thermostat_display_sweat_bead_223ddd0051.mp4" type="video/mp4">
+                    </video>
+
+                    <!-- scene label overlay -->
+                    <div id="adSceneLabel" style="
+                      position:absolute;bottom:0;left:0;right:0;
+                      padding:32px 16px 16px;
+                      background:linear-gradient(transparent,rgba(0,0,0,0.75));
+                      color:white;
+                      font-family:'DM Sans',sans-serif;
+                      font-size:12px;
+                      font-weight:600;
+                      letter-spacing:0.04em;
+                    ">Scene 1 — Hook</div>
+
+                    <!-- play overlay (shown when paused) -->
+                    <div id="adPlayOverlay" style="
+                      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+                      background:rgba(0,0,0,0.35);cursor:pointer;transition:opacity 0.3s;
+                    " onclick="adTogglePlay()">
+                      <div style="
+                        width:56px;height:56px;border-radius:50%;
+                        background:rgba(5,150,105,0.9);
+                        display:flex;align-items:center;justify-content:center;
+                        box-shadow:0 0 0 8px rgba(5,150,105,0.2);
+                      ">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M6 4l12 6-12 6V4z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- scene progress dots — below phone -->
+              <div id="adDots" style="display:flex;gap:8px;justify-content:center;margin-top:20px;">
+                <div class="ad-dot active" data-scene="0"></div>
+                <div class="ad-dot" data-scene="1"></div>
+                <div class="ad-dot" data-scene="2"></div>
+                <div class="ad-dot" data-scene="3"></div>
+                <div class="ad-dot" data-scene="4"></div>
+              </div>
+
+              <!-- demo badge -->
+              <div style="
+                text-align:center;margin-top:16px;
+                font-size:11px;color:rgba(255,255,255,0.28);
+                font-family:'DM Sans',sans-serif;letter-spacing:0.06em;
+                font-style:italic;
+              ">Demo · AI-generated scenes · Final edit in production</div>
+            </div>
+          </div>
+
+          <!-- right: scene breakdown -->
+          <div class="reveal-right">
+            <p style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--g-light);margin-bottom:28px;">
+              Ad Script — "Beat the Heat" · Meta Feed · 22s
+            </p>
+
+            <div id="adScenes" style="display:flex;flex-direction:column;gap:0;">
+
+              <div class="ad-scene-row active" data-s="0">
+                <div class="ad-scene-num">1</div>
+                <div>
+                  <div class="ad-scene-tag">Hook · 0–3s</div>
+                  <div class="ad-scene-text">Thermostat reads 84°F. A single bead of sweat. The scroll stops here.</div>
+                </div>
+              </div>
+
+              <div class="ad-scene-row" data-s="1">
+                <div class="ad-scene-num">2</div>
+                <div>
+                  <div class="ad-scene-tag">Pain · 3–8s</div>
+                  <div class="ad-scene-text">"If your AC breaks this summer..." — a frustrated homeowner fans themselves on the couch.</div>
+                </div>
+              </div>
+
+              <div class="ad-scene-row" data-s="2">
+                <div class="ad-scene-num">3</div>
+                <div>
+                  <div class="ad-scene-tag">Agitate · 8–14s</div>
+                  <div class="ad-scene-text">"...most homeowners wait 2–3 days for a callback." A calendar marks the agonizing wait.</div>
+                </div>
+              </div>
+
+              <div class="ad-scene-row" data-s="3">
+                <div class="ad-scene-num">4</div>
+                <div>
+                  <div class="ad-scene-tag">Solution · 14–18s</div>
+                  <div class="ad-scene-text">"We connect you to a verified local HVAC tech — fast." Progress bar fills. ✓ Tech found nearby.</div>
+                </div>
+              </div>
+
+              <div class="ad-scene-row" data-s="4">
+                <div class="ad-scene-num">5</div>
+                <div>
+                  <div class="ad-scene-tag">Proof · 18–21s</div>
+                  <div class="ad-scene-text">"Same-day service. No runaround." The tech arrives. The homeowner's relief is visible.</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- channel context -->
+            <div style="
+              margin-top:40px;padding:24px;
+              background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);
+              border-radius:16px;
+            ">
+              <p style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--g-light);margin-bottom:14px;">Where this runs</p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <span style="padding:6px 14px;border-radius:100px;background:rgba(5,150,105,0.15);border:1px solid rgba(5,150,105,0.25);font-size:12px;font-weight:600;color:var(--g-light);">Meta Feed</span>
+                <span style="padding:6px 14px;border-radius:100px;background:rgba(5,150,105,0.15);border:1px solid rgba(5,150,105,0.25);font-size:12px;font-weight:600;color:var(--g-light);">Instagram Reels</span>
+                <span style="padding:6px 14px;border-radius:100px;background:rgba(5,150,105,0.15);border:1px solid rgba(5,150,105,0.25);font-size:12px;font-weight:600;color:var(--g-light);">Facebook Stories</span>
+              </div>
+              <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,0.38);line-height:1.65;">
+                Targeted by location, home ownership, and household profile — reaching homeowners in your SPs' service areas before they even start searching.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Ad preview dots */
+      .ad-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: rgba(255,255,255,0.18);
+        transition: background 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
+      .ad-dot.active {
+        background: var(--g-light);
+        transform: scale(1.35);
+      }
+      /* Ad scene rows */
+      .ad-scene-row {
+        display: flex; gap: 16px; align-items: flex-start;
+        padding: 18px 14px; border-radius: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        transition: background 0.3s;
+        cursor: pointer;
+      }
+      .ad-scene-row:last-child { border-bottom: none; }
+      .ad-scene-row.active { background: rgba(5,150,105,0.1); }
+      .ad-scene-num {
+        flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.1);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.4);
+        transition: background 0.3s, border-color 0.3s, color 0.3s;
+      }
+      .ad-scene-row.active .ad-scene-num {
+        background: rgba(5,150,105,0.25);
+        border-color: rgba(5,150,105,0.4);
+        color: var(--g-light);
+      }
+      .ad-scene-tag {
+        font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+        text-transform: uppercase; color: rgba(255,255,255,0.3);
+        margin-bottom: 5px; transition: color 0.3s;
+      }
+      .ad-scene-row.active .ad-scene-tag { color: var(--g-light); }
+      .ad-scene-text {
+        font-size: 13.5px; color: rgba(255,255,255,0.38);
+        line-height: 1.6; transition: color 0.3s;
+      }
+      .ad-scene-row.active .ad-scene-text { color: rgba(255,255,255,0.72); }
+      @media (max-width: 960px) {
+        .ad-preview-layout { grid-template-columns: 1fr !important; gap: 48px !important; }
+      }
+    </style>
+
+    <script>
+      (function() {
+        var clips = [
+          { src: "../ad-scripts/beat the heat ad/Thermostat_display_sweat_bead_223ddd0051.mp4",    label: "Scene 1 — Hook" },
+          { src: "../ad-scripts/beat the heat ad/Fan_moves_back_and_forth_0f38b59471.mp4",          label: "Scene 2 — Pain" },
+          { src: "../ad-scripts/beat the heat ad/The_voicemail_notification_on_the_phone_screen_pul_ddb817d921.mp4", label: "Scene 3 — Agitate" },
+          { src: "../ad-scripts/beat the heat ad/Progress_bar_fills_status_checkmark_fb976109f0.mp4", label: "Scene 4 — Solution" },
+          { src: "../ad-scripts/beat the heat ad/Technician_and_homeowner_nod_4c76ec912e.mp4",      label: "Scene 5 — Proof" }
+        ];
+        var current = 0;
+        var vid = document.getElementById('adVideo');
+        var overlay = document.getElementById('adPlayOverlay');
+        var sceneLabel = document.getElementById('adSceneLabel');
+        var dots = document.querySelectorAll('.ad-dot');
+        var sceneRows = document.querySelectorAll('.ad-scene-row');
+
+        function goTo(i) {
+          current = i;
+          vid.src = clips[i].src;
+          sceneLabel.textContent = clips[i].label;
+          dots.forEach(function(d,idx){ d.classList.toggle('active', idx===i); });
+          sceneRows.forEach(function(r,idx){ r.classList.toggle('active', idx===i); });
+          vid.load();
+          vid.play().catch(function(){});
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+        }
+
+        vid.addEventListener('ended', function() {
+          var next = (current + 1) % clips.length;
+          goTo(next);
+        });
+
+        vid.addEventListener('play', function() {
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+        });
+        vid.addEventListener('pause', function() {
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+          overlay.querySelector('svg').innerHTML = '<path d="M6 4l12 6-12 6V4z"/>';
+        });
+
+        window.adTogglePlay = function() {
+          if (vid.paused) { vid.play(); }
+          else { vid.pause(); }
+        };
+
+        // dot clicks
+        dots.forEach(function(d, i) {
+          d.addEventListener('click', function() { goTo(i); });
+        });
+        // scene row clicks
+        sceneRows.forEach(function(r, i) {
+          r.addEventListener('click', function() { goTo(i); });
+        });
+
+        // auto-start when section scrolls into view
+        var section = document.getElementById('ad-preview');
+        var hasStarted = false;
+        var startIO = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting && !hasStarted) {
+              hasStarted = true;
+              vid.play().catch(function(){});
+              overlay.style.opacity = '0';
+              overlay.style.pointerEvents = 'none';
+            }
+          });
+        }, { threshold: 0.3 });
+        startIO.observe(section);
+      })();
+    </script>
+
     <!-- ═══ FOOTER ═══ -->
     <footer>
       <div class="footer-inner">
