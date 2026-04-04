@@ -4,7 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**LeadFlow** is a done-for-you HVAC lead generation, routing, and re-engagement platform built for a platform owner managing 68 HVAC service providers (SPs). The project is currently in the **pre-development / sales phase** — the proposal site (`leadflow-proposal.html`) is the primary deliverable.
+**LeadFlow** is a done-for-you HVAC lead generation and re-engagement platform. Its core services are: managed ads, lead qualification, campaign management, and monthly reports. LeadFlow is **customizable** — specific features can be added or removed based on what each client needs.
+
+The current client is **NEE** (Network of HVAC Enterprises / platform owner managing 68 service providers). **Lead routing is a custom addition built specifically for NEE** — it is not a standard LeadFlow feature. NEE's network structure (68 SPs sharing a territory) requires geographic routing logic that most clients won't need.
+
+The project is currently in the **pre-development / sales phase** — the proposal site (`leadflow-proposal.html`) is the primary deliverable.
 
 **Always read `leadflow_context.md` first** before working on any LeadFlow task — it is the source of truth for business logic, system design, and current status.
 
@@ -55,7 +59,7 @@ When building the Next.js platform after proposal approval:
 
 - **Frontend:** Next.js (React) hosted on Vercel
 - **Database:** MongoDB Atlas
-- **Routing logic:** Geographic distance matching across 68 SPs; fallback to next-closest if unavailable
-- **CRM:** Shared single CRM for all 68 SPs; every routed lead pushed instantly
+- **Routing logic (NEE-specific):** Geographic distance matching across 68 SPs; fallback to next-closest if unavailable — this is custom-built for NEE's multi-SP network, not a standard LeadFlow feature
+- **CRM:** Shared single CRM for all 68 SPs; every routed lead pushed instantly (NEE-specific)
 - **Revive campaign:** 3-part automation — cold lead re-engagement, past customer follow-up, seasonal promotions
 - **Ad channels:** Google Search, Google LSA, Meta Feed (full funnel from awareness to conversion)
